@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Security {% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<!-- JUMBOTRON FOR EXECTUIVE TEAM  -->
+<div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="head">Security</h1>
+          <h4 class="text text-muted">Tips to protect your personal information</h4>
+        </div>
+      </div>
+</div>
+
+<!-- SOME TEXT  -->
+<div class="container mt-6">
+    <p class="text-muted">
+        Your personal information can be very valuable, but it can be misused if it falls into the wrong hands. There can be serious consequences if you don't keep your personal information secure, such as unauthorised access to your accounts and even identity theft.There are many ways in which people can obtain your personal information for criminal purposes, such as 'phishing' emails, scam phone calls, breaking into your home and stealing your personal documents or stealing your private mail from your mail box.
+    </p>
+</div>
+<!-- OUR SECURITY STARTS FROM HERE  -->
+<div class="container mt-3">
+    <div class="row">
+        {% for s in security %}
+        <div class="col-md-12 mt-3 mb-3">
+            <h5 class="font-weight-bold">{{s.security_title}}</h5>
+            <p class="text-muted mt-2">
+               {{s.security_desc|safe}}
+            </p>
+        </div>
+        {% endfor %}
+      
+    </div>
+</div>
+
+<!-- LIMITATIONS OF INTELLECT WEALTH  -->
+<div class="container mt-6">
+    <div class="row">
+        {% for l in limitaion %}
+        <div class="col-md-12">
+            <h5 class="font-italic weight text-muted">Limitation of Liability and Disclaimer</h5>
+            <p class="text-muted mt-3 font-italic">
+                {{l.description|safe}}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

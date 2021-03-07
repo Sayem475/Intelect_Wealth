@@ -1,0 +1,149 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Contact Intellect Wealth {% endblock title %}
+
+{% block css %}
+<style>
+  .touch{
+    font-weight: bold;
+    font-size: 30px;
+    color:gold;
+
+  }
+  .bg-one{
+    background-color: #46bfe6; /* For browsers that do not support gradients */
+    background-image: linear-gradient(#098eb7, #88bd40);
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .bg-con{
+    background-color: rgb(253, 252, 252); /* For browsers that do not support gradients */
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+  }
+   
+    .s{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      .map-container-3{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        height:0;
+        }
+        .map-container-3 iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        }
+        .btn-sayem{
+          background-color:#46bfe6;
+          
+        }
+</style>
+{% endblock css %}
+
+{% block body %}
+ <!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/cont.jpg' %}" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1>Contact Us</h1>
+            <p class="slide-p">We are here to answer your questions
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+
+
+   <!-- CONTACT FORM AND THE LOCATION  -->
+   <div class="container mt-6">
+       <div class="row">
+           <!-- CONTACT FORM  -->
+           <div class="col-md-6 p-3 bg-con">
+               <h3 class="text-center font-weight-bold " >Get in touch with us</h3>
+            <form class="p-4" method="POST" >
+              {% csrf_token %}
+                <div class="form-group row mt-0 mb-0">
+                  <label for="f_name" class="col-sm-3 col-form-label font-weight-bold ">First Name:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="first_name" class="form-control s" id="f_name" required>
+                  </div>
+                </div>
+                <div class="form-group row mt-0 mb-0">
+                  <label for="l_name" class="col-sm-3 col-form-label font-weight-bold">Last Name:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="last_name" class="form-control s " id="l_name" required >
+                  </div>
+                </div>
+                <div class="form-group row mt-0 mb-0">
+                  <label for="phone" class="col-sm-3 col-form-label font-weight-bold ">Phone:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="phone" class="form-control s " id="phone" required>
+                  </div>
+                </div>
+                <div class="form-group row mt-0 mb-0">
+                  <label for="email" class="col-sm-3 col-form-label font-weight-bold">Email:</label>
+                  <div class="col-sm-12">
+                    <input type="email" name="email" class="form-control s" id="exampleInputEmail1" aria-describedby="EmailHelp" required >
+                  </div>
+                </div>
+                <div class="form-group row mt-0 mb-0">
+                  <label for="message" class="col-sm-3 col-form-label font-weight-bold">Message:</label>
+                  <div class="col-sm-12">
+                    <textarea class="form-control s" name="message" id="message" rows="3" required></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-outline-dark">
+                  <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+                   Send Message</button>
+              </form>
+           </div>
+
+           <!-- OFFICE ADDRESS AND LOCATION  -->
+           <div class="col-md-5 p-4 ml-3 anm main bg-light">
+
+            <h3 class="font-weight-bold">Our Offices:</h3>
+            <p>Mon - Fri, 8:30am - 5:00pm (AEST)</p>
+            <p> <b>SYDNEY</b>     <span class="text-muted">Head Office   Level 16, 363 George Street, SYDNEY NSW 2000</span>         </p>
+            <p> <b>MELBOURNE</b>  <span class="text-muted">Level 6, 390 La Trobe Street, Melbourne VIC 3000</span>                   </p>
+            <p> <b>PERTH</b>      <span class="text-muted"> Level 6, 390 La Trobe Street, Melbourne VIC 3000</span>                  </p>
+            <p> <b>BRISBANE</b>   <span class="text-muted">Level 14, Central Plaza One, 345 Queen Street Brisbane QLD 4000 </span>   </p>
+            <p> <b>POST:</b>      <span class="text-muted">GPO BOX 5380, SYNEY NSW 2001</span>  </p>
+            <p> <b>PHONE:</b>     <span class="text-muted">1300 IW (1300 233 464)</span>        </p>
+            <p> <b>EMAIL: </b>    <span class="text-muted">hello@intellectwealth.com.au</span>  </p>
+
+            <p> Click <a href="#">here</a>  to view the IW contact list</p>
+           </div>
+       </div>
+   </div>
+
+   <!-- OFFICE LOCATION  -->
+   <div class=" mt-6">
+    <div class="row text-center">
+        <div class="col-md-12">
+             <!-- OFFICE LOCATION MAP  -->
+             <div class="z-depth-1-half map-container-3" id="map-container-google-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8268145790275!2d151.20434541521024!3d-33.868353880656294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3f634479a5%3A0x72127ea1e08ddaf2!2sLevel%2016%2F363%20George%20St%2C%20Sydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sbd!4v1612865342192!5m2!1sen!2sbd"  frameborder="0" style="border:0;" tabindex="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

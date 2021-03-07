@@ -1,0 +1,512 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.css' %}">
+    <!-- theme stylesheet-->
+    <!-- <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet"> -->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <style>
+      a{
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+      p{
+        font-size: 17px;
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+      h2{
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+      h4{
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+      
+      h5{
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+
+      h1{
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+      }
+      /* your styles go here */
+      body {
+        overflow-x: hidden;
+        font-family: "Ciutadella-SemiBold", Arial, Helvetica, sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.25;
+        letter-spacing: 0.09em;
+      }
+
+      a, button {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        outline: none;
+      }
+
+      a i.fa, button i.fa {
+        margin: 0 5px;
+      }
+
+      h1 {
+        font-weight: 700;
+      }
+
+      .text-uppercase {
+        letter-spacing: .2em;
+      }
+
+      .btn-primary {
+        color: #fff !important;
+      }
+
+      .btn + .btn {
+        margin-left: 5px;
+      }
+
+      .disabled {
+        cursor: not-allowed;
+      }
+
+      .clickable {
+        cursor: pointer;
+      }
+
+      .menu-large {
+        position: static !important;
+      }
+
+      .menu-large .megamenu {
+        padding: 20px;
+        width: 100%;
+        max-width: 1140px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: -1px;
+      }
+
+      .menu-large a.nav-link {
+        padding: 7px !important;
+        padding-left: 0 !important;
+      }
+
+      /*
+      *
+      * ======================================================================
+      * TOP BAR
+      * ======================================================================
+      *
+      */
+      #top {
+        background: #555;
+        padding: 10px 0;
+      }
+
+      #top .offer {
+        color: #fff;
+      }
+
+      #top .offer .btn {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      @media (max-width: 991.98px) {
+        #top {
+          font-size: 0.738rem;
+          text-align: center;
+        }
+      }
+
+      #top a {
+        color: #fff;
+      }
+
+      #top ul.menu {
+        padding-top: 5px;
+        margin: 0;
+        font-size: 0.738rem;
+      }
+
+      #top ul.menu > li {
+        margin-right: 0;
+      }
+
+      #top ul.menu > li a {
+        color: #eee;
+      }
+
+      #top ul.menu > li + li:before {
+        content: "|\00a0";
+        padding: 0 5px;
+        color: #f8f9fa;
+      }
+
+      #top ul.menu > .active {
+        color: #999;
+      }
+
+      #top #login-modal .modal-header {
+        background: #4fbfa8;
+      }
+
+      #top #login-modal .modal-header h5 {
+        color: #fff;
+      }
+
+      #top #login-modal a {
+        color: #4fbfa8;
+      }
+
+      #top #login-modal p {
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      /*
+      *
+      * ======================================================================
+      * NAVBAR
+      * ======================================================================
+      *
+      */
+      .navbar {
+        border-bottom: 1px solid #e6e6e6;
+        background-color: #fff;
+      }
+
+      .navbar .navbar-nav > .nav-item > .nav-link {
+        font-weight:600;
+        padding: 20px 10px !important;
+        color: rgb(46, 42, 42);
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar .navbar-nav > .nav-item > .nav-link {
+          padding: 10px 15px !important;
+        }
+      }
+
+
+
+      @media (max-width: 991.98px) {
+        .navbar .dropdown-menu {
+          position: relative !important;
+          border: none;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+      }
+
+      .navbar .megamenu {
+        padding: 30px !important;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar .megamenu {
+          padding: 15px !important;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+
+      .navbar .menu-large h5 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding-bottom: 10px;
+        border-bottom: dotted 1px #555;
+      }
+
+      @media (max-width: 767.98px) {
+        .navbar .menu-large h5 {
+          font-size: 0.9rem;
+        }
+      }
+
+      .navbar .menu-large ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar .menu-large ul .nav-item {
+        list-style-type: none;
+        border-bottom: solid 1px #eee;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 4px 0;
+      }
+
+      .navbar .menu-large ul .nav-item a {
+        color: rgb(36, 34, 34);
+        font-size: 1rem;
+        font-weight: 600;
+        display: block;
+        padding: 0 !important;
+      }
+
+      .navbar .menu-large ul .nav-item a:hover {
+        color:  #88bd40 !important;
+        text-decoration: none;
+      }
+
+      .navbar .menu-large .banner {
+        margin-bottom: 10px;
+      }
+
+      .navbar #basket-overview {
+        padding: 0;
+      }
+
+      .navbar .navbar-btn {
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      #search {
+        background: #fff;
+      }
+
+      #search .container {
+        text-align: right;
+      }
+
+      #search form {
+        max-width: 500px;
+        padding: 20px 0;
+      }
+
+      #search .navbar-form {
+        float: right;
+        width: 500px;
+      }
+
+      .breadcrumb {
+        -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        border-radius: 0;
+        padding: 0.5rem 1rem;
+      }
+      
+
+      .anm{
+        background: none;
+      
+        font-family: "montserrat";
+        transition: 0.8s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .main:hover{
+          color: #fff;
+     }
+     .anm::before{
+       content: "";
+       position: absolute;
+       left: 0;
+       width: 100%;
+       height: 8%;
+       background:  #1bafd0;
+       z-index: -1;
+       transition: 0.8s;
+     }
+     .main::before{
+       top: 0;
+       border-radius: 0 0 50% 50%;
+     }
+     .main:hover::before{
+       height: 180%;
+     }
+      
+    
+
+     /*button starts from here */
+     .btn-anm{
+       position: relative;
+       display: inline-block;
+       padding: 15px 20px;
+       color: #1bafd0;
+       text-transform: uppercase;
+       text-decoration: none;
+       font-size: 1.5rem;
+       overflow: hidden;
+       transition: 0.2s;
+       text-decoration: none;
+     }
+     .btn-anm:hover{
+       color: #255784;
+       background: #1bafd0;
+       box-shadow: 0 0 10px #1bafd0, 0 0 40px #1bafd0,0 0 80px #1bafd0;
+       transition-delay: 1s;
+       text-decoration: none;
+     }
+     .btn-anm span{
+       position: absolute;
+       display: block;
+     }
+     .btn-anm span:nth-child(1){
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 2px;
+       background: linear-gradient(90deg,transparent,#1bafd0);
+     }
+     .btn-anm:hover span:nth-child(1){
+        left: 100%;
+        transition: 1s;
+     }
+     .btn-anm span:nth-child(3){
+       bottom: 0;
+       right: -100%;
+       width: 100%;
+       height: 2px;
+       background: linear-gradient(270deg,transparent,#1bafd0);
+     }
+     .btn-anm:hover span:nth-child(3){
+        right: 100%;
+        transition: 1s;
+        transition-delay: .5s;
+     }
+     .btn-anm span:nth-child(2){
+       top: -100%;
+       right: 0;
+       width: 2px;
+       height: 100%;
+       background: linear-gradient(180deg,transparent,#1bafd0);
+     }
+     .btn-anm:hover span:nth-child(2){
+        top: 100%;
+        transition: 1s;
+        transition-delay: .25s;
+     }
+     .btn-anm span:nth-child(4){
+       bottom: -100%;
+       left: 0;
+       width: 2px;
+       height: 100%;
+       background: linear-gradient(360deg,transparent,#1bafd0);
+     }
+     .btn-anm:hover span:nth-child(4){
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: .75s;
+     }
+
+     
+     #top {
+       background:#e7edf0;
+       padding: 1px 0;
+       font-weight: bold;
+       font-size: 1rem;
+     }
+     .mt-6{
+       padding-top: 3rem;
+     }
+     .mt-30{
+       padding-top: 5rem;
+     }
+     .mb-60{
+       padding-bottom: 3rem;
+     }
+     .mb-50{
+       padding-bottom: 1rem;
+     }
+     .footer{
+       background-color: #0a0a0a;
+       color: white;
+     }
+    
+    
+     .ml-10{
+       padding-left: 12.5rem;
+     }
+     .p-30{
+       padding: 5rem;
+     }  
+
+     /* HR TAG ANIMATION LIGHTING */ 
+     .f-hr{
+       
+       background-color: #46bfe6 ;
+     }
+     
+     /* HR TAG ANIMATION LIGHTING */ 
+     /*Logo for our web */
+     .logo{
+       width: 50%;
+       height: auto;
+     
+       
+     }
+     
+     .slide-p{
+       font-size: 20px;
+     }
+     h1{
+       font-size: 40px;
+     }
+     .sm-lg{
+       background-color: #080808 ;
+       padding: 10px;
+       border: #0a0a0a;
+       border-radius: 20px;
+     }
+     .navbar .navbar-nav > .nav-item > .nav-link.active, .navbar .navbar-nav > .nav-item > .nav-link:hover, .navbar .navbar-nav > .nav-item > .nav-link:focus {
+      color: #ffffff;
+    }
+    /* blur banner background text */
+    .bg-text{
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    }
+    
+  
+    </style>
+    {% block css %}
+    {% endblock css %}
+   
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    {% include "Index/navigation.html" %}
+
+    {% block body %}
+    {% endblock body %}
+    
+    {% include "Index/footer.html" %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'vendor/jquery.cookie/jquery.cookie.js' %}"> </script>
+    <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js' %}"></script>
+    <script src="{% static 'js/front.js' %}"></script>
+    {% block script %}
+    {% endblock script %}
+</body>
+</html>

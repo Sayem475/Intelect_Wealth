@@ -1,0 +1,131 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Find An Advisor {% endblock title %}
+
+{% block css %}
+<style>
+    
+</style>
+{% endblock css %}
+
+{% block body %}
+  <!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide3.jpg' %}" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1>Find an Adviser</h1>
+            <p class="slide-p">Talk to an Intellect Wealth Adviser
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+   <!-- OUR TEXT AREA WILL APPEAR HERE IN A MID DIV  -->
+   <div class="container text-center mt-6 mb-60 ">
+    <h2 class="font-weight-bold">Leave us your details</h2>
+    <p class="text-muted">Click <a href="/contact"> here </a>- To submit an enquiry and we will put you in touch with an Intellect Wealth Adviser.</p>
+  </div>
+
+<!-- FIND AN ADVISOR STATIC DOC  -->
+<div class="container mt-6 mb-30 p-4 bg-light anm main">
+    <a href="/iwAdvisor" style="text-decoration: none; color:black;">
+        <h1 class="icons mb-3"><i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i></h1>
+        <h2 class="font-head">Need Advice</h2>
+        <h5 class="text-muted">Define and meet your financial goals with the expertise of an IW adviser.</h5>
+  
+    
+        <p class="text-muted">
+            We know what it takes to safeguard your finances against life's challanges
+            <br>
+            We'll work with you to make sure you have what you need to protect yourself and your family. Our advisers will help you understand: 
+            <br>
+            <ul>
+                <li>
+                <p class="text-muted"><span style="font-size: 0.93rem;">What you need to protect and how you can protect it (risk and insurance)</span></p>
+                </li>
+                <li>
+                <p class="text-muted">How much protection you need and how you can pay for it (cash flow)</p>
+                </li>
+                <li>
+                <p class="text-muted">How you set it up and where you might hold it (super or non-super)</p>
+                </li>
+                <li>
+                <p class="text-muted">And your plan for the future (estate planning)</p>
+                </li>
+            </ul>
+        </p>
+        <p class="text-success font-weight-bold">Learn More</p>
+    </a>
+</div>
+
+
+<div class="container ">
+<h2 class="mt-30 mb-60 text-center font-weight-bold">Join Intellect Wealth</h2>
+
+
+</div>
+
+<!-- JOIN US STATIC DOC  -->
+<div class="container mt-6 p-4 bg-light anm main">
+    <a href="/joinus" style="text-decoration: none; color:black;">
+        <h1 class="icons mb-3"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i></h1>
+        <h2 class="font-head">Join Us</h2>
+        <h5 class="text-muted">Join a community that's committed to providing great advice for every Australian.</h5>
+        <p class="text-muted">
+            As part of the intellect wealth familym,you have access to all of the tools,resources,systems and services that we have on offer: 
+            <br>
+            <ul>
+                <li>
+                <p class="text-muted"><span style="font-size: 0.93rem;">Intellect Wealth Advice Handbooks</span></p>
+                </li>
+                <li>
+                <p class="text-muted">Business Coaching</p>
+                </li>
+                <li>
+                <p class="text-muted">Community</p>
+                </li>
+                <li>
+                <p class="text-muted">Education & Training</p>
+                </li>
+            </ul>
+        </p>
+        <p class="text-success font-weight-bold">Learn More</p>
+    </a>
+</div>
+
+
+<!-- JUMBOTRON FOR STYLES ONLY -->
+<div class="mt-30 ">
+  <div class="jumbotron jumbotron-fluid mt-30 mb-60">
+      <div class="container">
+      </div>
+    </div>
+</div>
+
+<div class="container mt-6">
+  <p class="text-muted">
+    [1] s766A Corporations Act<br>
+    [2] s766B Corporations Act<br>
+    [3] Regulatory Guide 36<br>
+    [4] s766C Corporations Act<br>
+    [5] For further guidance, see Regulatory Guide 36 and Regulatory Guide 244.<br>
+    [6] Regulatory Guide 36.28<br>
+    [7] s766B(6) Corporations Act<br>
+    [8] S766B(7) Corporations Act<br>
+    [9] s766B(1A) and s766B(9) Corporations Act, Reg 7.1.08<br>
+    [10] s941C and 941D Corporation Act for Time Critical Provisions<br>
+  </p>
+
+</div>
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

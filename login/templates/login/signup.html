@@ -1,0 +1,82 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block css %}
+<style>
+	.forms{
+		background-color: #46bfe6; /* For browsers that do not support gradients */
+    	background-image: linear-gradient(#098eb7, #88bd40);
+		padding: 2rem;
+	}
+	.bg-one{
+		background-color:#deeff5 ;
+		padding: 5rem;
+	}
+	.bg-two{
+		background-color: #1bafd0;
+	}
+	.cards{
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+	}
+  .logo{
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    
+  }
+	
+</style>
+{% endblock css %}
+{% load bootstrap4 %}
+
+{% block body %}
+<!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="second-slide" src="{% static 'images/banner/slide0.jpg' %}" alt="Second slide">
+      <div class="container ">
+        <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+          <h1>Register Here</h1>
+          <p class="slide-p"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+<div class="container mt-4 ">
+	<div class="row cards ">
+		<div class="col-md-6  bg-one  text-center">
+      <a href="/" class="navbar-brand home">
+        <img  src="{% static 'images/logo/tiw.png' %}" alt="logo" class="d-md-inline-block logo p-4" height="120px" width="170px">
+      </a>
+      <h4 class="text-center mt-4 font-weight-bold">REGISTER HERE</h4>
+      <p class="text-center mt-3 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusamus?</p>
+		</div>
+		<div class="col-md-6 bg-two p-4">
+      <h4 class="text-center font-weight-bold">Sign Up Here</h4>
+      <form method="POST" class="form" ">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+          <button type="submit" class="btn btn-outline-light font-weight-bold"> <i class="fa fa-sign-in" aria-hidden="true"></i>Sign Up</button>
+        {% endbuttons %}
+        <p>Already Have An Account. Log in <a href="/login/login" class=" font-weight-bold text-light">Here</a>...</p>
+      </form>
+		</div>
+	</div>
+</div>
+<!-- <div class="container ml-10">
+
+  <h1>Sign Up</h1>
+  <form method="POST" class="form" style="width: 40%;">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {{ form.non_field_errors }}
+    {% buttons %}
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    {% endbuttons %}
+  </form>
+</div> -->
+{% endblock body %}

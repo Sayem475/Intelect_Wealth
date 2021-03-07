@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth Offer {% endblock title %}
+
+{% block css %}
+<style>
+    .fa-check{
+        color:#2196f3;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- JUMBOTRON FOR EXECTUIVE TEAM  -->
+<div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="head">Our Offer</h1>
+          <h4 class="text text-muted">A dynamic partnership to support your business and quality advice to your clients</h4>
+        </div>
+      </div>
+</div>
+
+<!-- OFFERS OF INTELLECT WEALTH  -->
+<div class="container mt-4">
+    <h1 class="mb-4 font-head">Our Offer</h1>
+    <div class="row mt-6">
+        {% for i in iw_offer %}
+        <div class="col-lg-4  col-md-6 mb-2 ">
+            <h4 class="offer-head font-weight-bold"><i class="fa fa-check" aria-hidden="true"></i> {{i.offer_title}} </h4>
+            <p class="text-muted">
+                {{i.offer_desc|safe}}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

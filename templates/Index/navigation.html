@@ -1,0 +1,181 @@
+{% load static %}
+<style>
+  
+  .search-sam{
+    color:black;
+    font-size:20px;
+  }
+  .search-sam:hover{
+    color:white;
+  }
+  .account{
+    text-decoration:none;
+    color:black;
+  }
+  .account:hover{
+    color:white;
+    text-decoration:none;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #1bafd0;
+    font-style: italic;
+  }
+</style>
+
+<!-- FOR OUR INTELLECT WEALTH LOGO  -->
+<div class="container p-2">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <a href="/" class="navbar-brand home">
+          <img  src="{% static 'images/logo/tiw.png' %}" alt="logo" class="d-md-inline-block " height="80px" width="130px">
+          </a>
+    </div>
+  </div>
+</div>
+   
+   <!-- OUR NAVIGATION BAR START FROM HERE  -->
+    <nav class="navbar navbar-expand-lg" style="background-color:#1bafd0;">
+      <div class="container">
+        <a href="/" class="navbar-brand home">
+          <!-- <img  src="{% static 'images/logo/tiw.png' %}" alt="logo" class="d-none d-md-inline-block" height="80px" width="120px"> -->
+          <!-- <img src="{% static 'images/logo/tiw.png' %}" height="40px" width="90px" alt="logo-small" class="  d-inline-block d-md-none"> -->
+        </a>
+        <div class="navbar-buttons">
+          <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-primary navbar-toggler"><span class="sr-only">Toggle search</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+          <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-
+          primary navbar-toggler"><span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-align-justify"></i>
+        </button>
+
+          
+        </div>
+        <div id="navigation" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item dropdown menu-large">
+              <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="nav-link">
+                About Us 
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </a>
+
+              <ul class="dropdown-menu megamenu">
+                <li>
+                  <div class="row">
+                    <div class="col-md-6 col-lg-4 p-30">
+                      <h5>About Us</h5>
+                    </div>
+                    <div class="col-md-6 col-lg-8 p-30"> 
+                      <ul class="list-unstyled mb-3">
+                        <li class="nav-item"><a href="/about" class="nav-link">About Us Home</a></li>
+                        <li class="nav-item"><a href="/executiveteam" class="nav-link">Executive Team</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown menu-large">
+              <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class=" nav-link">
+                Join IW 
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
+              <ul class="dropdown-menu megamenu">
+                <li>
+                  <div class="row">
+                    <div class="col-md-6 col-lg-4 p-30">
+                      <h5>Join Intellect Wealth</h5>
+                    </div>
+                    <div class="col-md-6 col-lg-8 p-30"> 
+                      <ul class="list-unstyled mb-3">
+                        <li class="nav-item"><a href="/joinus" class="nav-link">Join Intellect Wealth Home</a></li>
+                        <li class="nav-item"><a href="/joinIW" class="nav-link">Join Intellect Wealth</a></li>
+                        <li class="nav-item"><a href="/iwOffer" class="nav-link">Our Offer</a></li>
+                        <li class="nav-item"><a href="/iwTeam" class="nav-link">Our Teams</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                 
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/iwLicense" class="nav-link ">License Services</a></li>
+            <li class="nav-item"><a href="/iwAdvisor" class="nav-link ">Find An Advisor</a></li>
+            <li class="nav-item"><a href="/clientEducation" class="nav-link ">Client Education</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link ">Contact Us</a></li>
+             {% if user.is_authenticated %}
+             <li class="nav-item"><a href="{% url 'IW_login:logout' %}" class="nav-link "><i class="fa fa-user-o " aria-hidden="true"></i> Logout</a></li>
+             {% else %}
+            <li class="nav-item"><a href="{% url 'IW_login:login' %}" class="nav-link "><i class="fa fa-user-o " aria-hidden="true"></i> Log In</a></li>
+            {% endif %}
+
+           
+          </ul>
+         
+          <!-- <div class="navbar-buttons d-flex justify-content-end">
+            <form class="form-inline my-2 my-md-0">
+              <input  class="form-control" type="text" placeholder="Search">
+            </form>
+          </div> -->
+
+          <div class="navbar-buttons d-flex justify-content-end">
+           
+            <div id="search-not-mobile" class="navbar-collapse collapse"></div>
+            <a data-toggle="collapse" href="#search" class=" d-none d-lg-inline-block ">
+              <span class="sr-only">Toggle search</span>
+               <i class="fa fa-search search-sam"></i> 
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- TOGGLE SEARCH BUTTON DIV IS HERE  -->
+    <div id="search" class="collapse">
+      <div class="container">
+        <form role="search" class="ml-auto" action="{% url 'Search' %}">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <input type="search" name="query"  placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="input-group">
+            <input type="text" name="query" placeholder="Search" class="form-control">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-outline-success"><i class="fa fa-search"></i></button>
+            </div> -->
+          </div>
+        </form>
+      </div>
+    </div>
+ 
+{% if messages %}
+
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message: </strong>{{message}} 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+    {% endfor %}
+
+   {% endif %}
+   <!-- OUR NAVIGATION BAR END HERE  -->

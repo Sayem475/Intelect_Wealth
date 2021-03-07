@@ -1,0 +1,82 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth Team {% endblock title %}
+
+{% block css %}
+<style>
+    .some-text{
+        border: 3px solid;
+        border-color: #46bfe6;
+        padding: 20px;
+    }
+    .desc{
+        text-decoration: normal;
+        font-size: 25px;
+        font-style: italic;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+  <!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide11.jpg' %}" alt="Second slide">
+        <div class="container ">
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1>Our Teams</h1>
+            <p class="slide-p">We're here to help you and your business
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  --> 
+   <div class="container mt-30 text-center">
+       <p class="text-muted">
+        At IW we believe in building a brighter future for more Australians through advice that provides financial clarity and control. We do this by partnering with financial advisers to provide high quality strategic advice solutions. Our support services are structured to enable you to grow your business and deliver quality advice solutions to your valued clients.
+       </p>
+   </div>
+
+   <!-- FOUR BOXES WITH CSS ANIMATION AND TEXT  -->
+   <div class="container-fluid mb-60 mt-30">
+    <div class="row justify-content-center">
+      {% for i in i_teams %}
+        <div class="col-lg-2 col-md-5 bg-light p-4 m-2 anm main">
+        <a href="{{i.get_absolute_url}}" style="text-decoration: none; color:black;">
+          <h4 class="font-weight-bold">{{ i.ba_title }}</h4>
+          <p class="mt-3 text-muted">{{i.shortDesc|safe}}</p>
+        </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- FOUR BOXES WITH CSS ANIMATION AND TEXT  -->
+  <div class="container mt-30">
+    <h3 style="font-weight:600;">Testimonial</h3>
+  </div>
+
+  <div class="container mt-4 mb-60">
+       <!-- DIV FOR JOINING   -->
+        <div class="row some-text">
+            <div class="col-md-3">
+                <h6 class="text-muted"> IW ADVISER</h6>
+                <h2>Nick Chew</h2>
+                <p><i class="fa fa-window-minimize" aria-hidden="true"></i></p>
+            </div>
+            <div class="col-md-1">
+                <h1 class="text-muted"><i class="fa fa-quote-left" aria-hidden="true"></i></h1>
+            </div>
+            <div class="col-md-8 text-left">
+                <p class="text-muted desc">We choose IW because they enable the experience we are designing for our clients, they put our clients first and help us to be better advisers. They don't get in the way, and help us plot the path forward</p>
+            </div>
+        </div>
+  </div>
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

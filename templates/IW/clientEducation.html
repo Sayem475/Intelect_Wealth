@@ -1,0 +1,134 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth Client Education {% endblock title %}
+
+{% block css %}
+<style>
+    .bg-white{
+        background-color:white;
+    }
+   
+  .tooltip-inner {
+    padding: 1.3em; 
+    }
+    
+</style>
+{% endblock css %}
+
+{% block body %}
+  <!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide2.jpg' %}" alt="Second slide">
+        <div class="container"> 
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1 class="weight">Educational Fact Sheets</h1>
+            <p class="slide-p">Intellect Wealth educational fact</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+<!-- OUR COLLAPSE STARTS FROM HERE  -->
+<div class="container mt-6">
+    <div class="row">
+         {% for f in files %}
+        <div class="col-md-12">
+            <div class="mt-3">
+                <div id="accordion" role="tablist">
+                    <div class="card ">
+                        <div class="card-header bg-white" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="pro-det" style="color:black;text-decoration:none; font-size:17px;">
+                                    {{f.clint}}
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse-text show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <!-- <h6 class="text-muted">Click on the files to download the Strategy flyers</h6> -->
+                                <div class="row">
+                                     <div class="col-md-12 ">
+                                        <a href="{{f.file.url}}" class="text-dark " download="">{{f.file}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-md-12">
+            <div class="mt-3">
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header bg-white" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapsetwo" aria-expanded="true" aria-controls="collapseOne" class="pro-det" style="color:black;text-decoration:none; font-size:17px;  ">
+                                    Estate Planing
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapsetwo" class="collapse-text show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <h6 class="text-muted">Click on the files to download the Strategy flyers</h6>
+                                <div class="row">
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark "> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark "> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mt-3">
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header bg-white" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapsethree" aria-expanded="true" aria-controls="collapseOne" class="pro-det" style="color:black;text-decoration:none; font-size:17px;">
+                                    Social Security
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapsethree" class="collapse-text show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <h6 class="text-muted">Click on the files to download the Strategy flyers</h6>
+                                <div class="row">
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark "> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                    <div class="col-md-12 ">
+                                        <a href="#" class="text-dark "> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+   
+</div>
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

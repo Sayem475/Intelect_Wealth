@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth Executive Team {% endblock title %}
+
+{% block css %}
+<style>
+    .head{
+        font-weight:bold;
+    }
+    
+
+    
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- JUMBOTRON FOR EXECTUIVE TEAM  -->
+<div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="head">Executive Team</h1>
+          <h4 class="text text-muted">Intellect Wealth Leadership Team </h4>
+        </div>
+      </div>
+</div>
+
+<!-- PROFILES OF EXECUTIVE TEAM  -->
+<div class="container mt-60">
+    {% for e in ex_team %}
+    <div class="container  mt-3 mb-3">
+        <img style="border-radius: 30px;" width="295px;" height="295px;" src="/media/{{e.image}}" alt="">
+        <h2 class="mt-3 head">{{e.name}}</h2>
+        <h4 class="text-muted mt-3">{{e.designation}}</h4>
+        <p class="mt-4 text-muted">{{e.team_desc|safe}} </p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- THERE WILL BE A PAGINATION HERE  -->
+
+
+
+
+
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

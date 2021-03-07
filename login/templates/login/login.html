@@ -1,0 +1,125 @@
+
+
+{% extends "index.html" %}
+{% load socialaccount %}
+ {% load static %}
+
+{% providers_media_js %}
+{# at the terminal, run pip install django-bootstrap4 #}
+{% load bootstrap4 %}
+{% block css %}
+<style>
+	.forms{
+		background-color: #46bfe6; /* For browsers that do not support gradients */
+    	background-image: linear-gradient(#098eb7, #88bd40);
+		padding: 2rem;
+	}
+	
+	.cards{
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+	}
+	.bg-log{
+		border:1px solid gray;
+
+	}
+	.g{
+		color: red;
+	}
+	.social-connect .fa-google-plus {
+		color: #df4b37;
+		padding: 10px 12px;
+		font-size: 20px
+	}
+	
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide9.jpg' %}" alt="Second slide">
+        <div class="container ">
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1>Log In</h1>
+            <p class="slide-p">Continue with Intellect Wealth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+<!-- UPDATED LOGIN FORM  -->
+<div class="container mt-4 justify-content-center">
+	<div class="row  justify-content-center align-items-center ">
+		<div class="col-md-6 p-4 bg-log">
+			<h4 class="text-center font-weight-bold mt-4 mb-4">Login</h4>
+			<P class="text-muted">Log in with your <a style="text-decoration:none;" href="{% provider_login_url 'google' %}"><span class="fa fa-google-plus text-danger"></span>oogle</a> account</P>
+			<p class="text-muted">Please enter your <b>email address </b>and <b>password</b> </p>
+			<form method="POST" class="form" >
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				{% buttons %}
+				<button type="submit" class="btn btn-outline-dark font-weight-bold"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+				{% endbuttons %}
+				<p>Don't have an account? <a href="{% url 'IW_login:signup' %}">Create an account</a></p>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- LOGIN FORM BY SAYEM  -->
+<!-- <div class="container mt-4 ">
+	<div class="row cards ">
+		<div class="col-md-6  bg-one  text-center">
+			<a class="btn btn-danger" href="{% provider_login_url 'google' %}"> Login with <i style="color: rgb(136, 255, 0);" class="fa fa-google">oogle</i></a>
+			<h4 class="text-light mt-4">Sign Up with your Gmail Account</h4>
+			<p>For more information Click <a href="/contact" class="text-light">Here</a>...</p> 
+		</div>
+		<div class="col-md-6 bg-two p-4">
+			<form method="POST" class="form " >
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				<div class="d-flex justify-content-center mt-3 login_container">
+					{% buttons %}
+						<button type="submit" class="btn btn-outline-light"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</button>
+					{% endbuttons %}
+				</div>
+				<div>
+					<p>Don't have an account? <a href="{% url 'IW_login:signup' %}">Create an account</a></p>
+				</div>
+			</form>
+		</div>
+	</div> -->
+
+	<!-- LOGIN FORM BY MAMUN  -->
+	<!-- <div class="row">
+		<div class="col-md-9 ml-10">
+					<h1>Login</h1>
+		  <form method="POST" class="form" style="width: 60%;">
+		    {% csrf_token %}
+		    {% bootstrap_form form %}
+		    {% buttons %}
+		      <button type="submit" class="btn btn-primary">Login</button>
+		    {% endbuttons %}
+		  </form>
+		  <div>
+		  	 <p>Don't have an account? <a href="{% url 'IW_login:signup' %}">Create an account</a></p>
+		  </div>
+		</div>
+
+		<div class="col-md-3 ">
+			<div class="mt-6">
+				 <a class="btn btn-info" href="{% provider_login_url 'google' %}"> Login with <i style="color: yellow;" class="fa fa-google">oogle</i></a>
+			</div>
+		</div>
+	</div> -->
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,129 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | About IW {% endblock title %}
+
+{% block css %}
+<style>
+    .font-head{
+        font-weight: 600;
+    }
+    .user-pro{
+        border: 3px solid #1bafd0;
+        
+    }
+    .avatar{
+        border: 2px solid #1bafd0;
+       
+
+    }
+    
+</style>
+{% endblock css %}
+
+{% block body %}
+  <!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide5.jpg' %}" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption  text-center bg-text" style="padding-bottom:160px;">
+            <h1>About Us </h1>
+            <p class="slide-p">Intellect Wealth, partnering with advisers to support more Australians
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+   <!-- OUR TEXT AREA WILL APPEAR HERE IN A MID DIV  -->
+   <div class="container text-center mt-6 ">
+     <h2 class="font-head">About Us</h2>
+     <p class="text-muted">Intellect Wealth, partnering with advisers to support more Australians</p>
+   </div>
+
+   <!-- OUR TEXT AREA WILL ENDS  -->
+   <div class="container mt-6 mb-60">
+        <!-- Tabs -->
+        <section id="tabs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <nav>
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item text-dark font-weight-bold nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><h5 class="font-weight-bold">Who We Are</h5></a>
+                                <a class="nav-item text-dark font-weight-bold nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><h5 class="font-weight-bold">Our Values</h5></a>
+                                <a class="nav-item text-dark font-weight-bold nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><h5 class="font-weight-bold">Our Principles</h5></a>
+                            </div>
+                        </nav>
+                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                            <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <p  class=" text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi quisquam magni maxime debitis dolor corrupti, quam praesentium eos aspernatur magnam eius laboriosam, libero recusandae illo officia, possimus numquam. Alias, quaerat?
+                                </p>
+                            </div>
+                            <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <p  class=" text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi quisquam magni maxime debitis dolor corrupti, quam praesentium eos aspernatur magnam eius laboriosam, libero recusandae illo officia, possimus numquam. Alias, quaerat?
+                                </p>
+                            </div>
+                            <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <p  class=" text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi quisquam magni maxime debitis dolor corrupti, quam praesentium eos aspernatur magnam eius laboriosam, libero recusandae illo officia, possimus numquam. Alias, quaerat?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ./Tabs -->
+
+        <!-- TEAM MEMBERS  -->
+        <div class="mb-60 mt-30">
+            <h2 class="font-head">Meet our team</h2>
+            <h5 class="mt-0 text-muted">Intellect Wealth Executive Team</h5>
+        </div>
+
+        <!-- OWL CAROUSEL FOR TEAM MEMBERS  -->
+        <div class="owl-carousel owl-theme">
+            {% for t in team %}
+            <div class="item" >
+                <a style="text-decoration: none; color: black;" href="/executiveteam">
+                <div class="card user-pro anm main">
+                    <div class="card-body text-center">
+                        <img class="avatar rounded-circle" src="/media/{{t.image}}" alt="Bologna">
+                        <h5 class="card-title mt-2 ">{{t.name}}</h5>
+                        <p class="card-subtitle mb-2 text-muted">{{t.designation}}</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock body %}
+
+{% block script %} 
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    })
+</script>
+{% endblock script %}

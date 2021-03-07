@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Search {% endblock title %}
+
+{% block css %}
+<style>
+  .some-text{
+    border: 2px solid black;
+    padding:20px;
+    text-decoration: none;
+    color: black;
+  }
+  .some-text:hover{
+    padding:20px;
+    color: #88bd40;
+  }
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- JUMBOTRON FOR EXECTUIVE TEAM  -->
+<div>
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="head">Search Results</h1>
+        <h4 class="text text-muted">A dynamic partnership to support your business and quality advice to your clients</h4>
+      </div>
+    </div>
+</div>
+
+<!-- IF SEARCH RESULT DOESN'T FIND ANYTHING THAN SHOW THIS (( SAYEM UDDIN SAM )) -->
+<!-- {% if posts|length < 1 %}
+    {% comment %} <p>No Results Found. Please search Valid Query</p> {% endcomment %}
+    <div class="container">
+        <p>Your search - <b>{{query}}</b> - did not match any documents.</p>
+        <p><b> Suggestions:</b></p>
+        <ul>
+            <li>Make sure that all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+            <li>Try more general keywords.</li>
+            <li>Try fewer keywords.</li>
+        </ul>
+    </div>
+
+    {% endif %} -->
+
+    <!-- HOW CAN YOU USE SLUG AND CUT SOME TEXT  -->
+    <!-- <p class="card-text mb-auto">{{i.content | truncatechars:400}}</p>
+    <a href="/Blog/{{i.slug}}">Continue reading</a> -->
+
+
+<!-- SEARCH RESULTS WILL BE SHOWN HERE  -->
+<div class="container">
+  <div class="row">
+    {% for r in result %}
+      <div class="col-md-12 mt-2">
+        <!-- SEARCH RESULTS  -->
+        <a href="{{r.get_absolute_url}}">
+          <div class="row some-text">
+              <div class="col-md-3 left">
+                  <h4><i class="fa fa-file-text" aria-hidden="true"></i></h4>
+              </div>
+              <div class="col-md-8 text-left">
+                <h4>{{r.name}}</h4>
+                <p>{{r.designation|safe}}</p>
+              </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

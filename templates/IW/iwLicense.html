@@ -1,0 +1,89 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth License {% endblock title %}
+
+{% block css %}
+<style>
+    .fa-firefox{
+        color:#2196f3;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide8.jpg' %}" alt="Second slide">
+        <div class="container ">
+          <div class="carousel-caption text-center bg-text" style="padding-bottom:160px;">
+            <h1>Intellect Wealth Access</h1>
+            <p class="slide-p">Your business, your brand, your choice: move forward your way with Affinia Access
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+<div class="container mt-6">
+    <p class="mt-4 text-muted">
+        Through IW Access, we’re combining the power, expertise and community of Affinia, with the flexibility to decide what support and services you want. It gives advisers confidence, with the insight and experience of Affinia behind them, and the freedom to evolve your business the way you want.<br>
+        <br>
+     
+        IW Access starts with a base package, comprising a comprehensive, white-labelled AFSL infrastructure, powerful tools and a range of support materials, all tailored to your brand and business.  <br>
+        <br>
+        And there a range of extras services and support tools available, so you can devise a service offering tailored to your needs
+    </p>
+    <h2 class="mt-6 font-weight-bold ">Get Started With IW Access </h2>
+    <p class="mt-3 text-muted">
+        Our base package provides a comprehensive, white-labelled AFSL infrastructure, including advocacy and governance, to help you get underway. All the documents and tools are tailored to your brand and business: it’s the expertise of Affinia, your way. Here are some of the resources you can draw on within Affinia Access:
+    </p>
+</div>
+<!-- LICENSE TOOL OF THE INTELLECT WEALTH  -->
+<div class="container">
+    <div class="row mt-6">
+        {% for l in license %}
+        <div class="col-lg-4 col-md-6 mt-1 mb-2">
+            <h4 class="mb-2 weight"><i class="fa fa-firefox" aria-hidden="true"></i> <b>{{l.license_name}}</b></h4>
+            <p class="text-muted">{{l.license_desc|safe}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- EXTRA SUIT OF THE BUSINESS  -->
+<div class="container mt-6 mb-3">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="mb-3 font-weight-bold">Add Extra's to Suit Your Business</h3>
+            <p class="text-muted">
+                Affinia Access gives you the flexibility to add to the base package and create a service offering tailored to your business needs. Here are just some of the options available to you:<br><br>
+        
+                - Business coaching service<br>
+                - Preferred technology pricing<br>
+                - Investment and super research<br>
+                - Acquisitions and adviser recruitment support<br>
+                - HR infrastrcuture<br>
+                - Annual AFSL review and report <br>
+                - Professional standards consulting <br>
+                - Breach and incident handling<br>
+                - Complaints handling<br>
+                - AR appointment due diligence
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container mt-6">
+    <h3  class="mb-3 font-weight-bold">Join Us</h3>
+    <p class="text-muted">
+        IW Access is redefining dealership support services. If you are looking to join a community of like-minded experts, we want to hear from you. 
+        <a href="/contact">Contact Us.</a>
+
+    </p>
+</div>
+
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

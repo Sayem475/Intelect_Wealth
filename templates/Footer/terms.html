@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Terms of use {% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<!-- JUMBOTRON FOR EXECTUIVE TEAM  -->
+<div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="head">Terms of Use</h1>
+          <h4 class="text text-muted">Terms of use for the Intellect Wealth Website</h4>
+        </div>
+      </div>
+</div>
+
+
+<!-- OUR TERMS OF USE WILL BE HERE  -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12 mt-3 mb-3">
+            <h3 class="font-weight-bold">About this website</h3>
+            <p class="text-muted mt-2">
+                The purpose of this site is solely to provide general information on Affinia Financial Advisers Limited (Affinia) (ABN 13 085 335 397), TAL Life Limited (TAL) (ABN 70 050 109 450), their related bodies corporate (TAL Group) and the services they provide. Full details of products and services on this site can be obtained by contacting TAL or Affinia.<br>
+                <br>
+
+                This site is not designed for the purpose of providing financial or investment advice. It is not a recommendation or offer to take up policies, securities, other investments or financial services or products.<br>
+                <br>
+
+                The material on this site and your use of the site are governed by the laws in force in the State of New South Wales, Australia and by these Terms of Use.
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<!-- OUR TERMS OF USE WILL BE HERE  -->
+<div class="container mt-3">
+    <div class="row">
+        {% for t in terms %}
+        <div class="col-md-12 mt-3 mb-3">
+            <h5 class="font-weight-bold">{{t.term_title}}</h5>
+            <p class="text-muted mt-2">
+                {{t.term_desc|safe}}
+            </p>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}

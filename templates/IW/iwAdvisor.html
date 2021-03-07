@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} IW | Intellect Wealth Advisor {% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<!-- OUR BANNER IMAGE WITH TITLE WILL START HERE  -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="second-slide" src="{% static 'images/banner/slide12.jpg' %}" alt="Second slide">
+        <div class="container ">
+          <div class="carousel-caption bg-text text-center" style="padding-bottom:160px;">
+            <h1>Find an Adviser</h1>
+            <p class="slide-p">Talk to an IW Adviser
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- OUR BANNER IMAGE WITH TITLE ENDS HERE  -->
+
+<div class="container ">
+    <h2 class="mt-30 font-weight-bold">Leave us your details.</h2>
+    <p class="text-muted">Click <a href="/contact">here</a> to submit an enquiry and we will put you in touch with an IW adviser.  </p>
+</div>
+
+<div class="container mt-6">
+    <div class="row">
+        {% for a in advisor %}
+        <div class="col-md-12 mt-4 mb-4">
+            <h3 class="font-weight-bold">{{a.advisor_title}}</h3>
+            <p class="text-muted mt-2">{{a.advisor_desc|safe}}</p>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-md-12">
+            <h3>Contemplating your finances?</h3>
+            <p class="text-muted mt-2">
+                Getting financial advice is a great place to start. Think about:<br>
+
+                What stage of life you're in. Are you planning to retire and want to secure your retirement income?  Are you starting a family and want to safeguard your kids' education?<br>
+                Your circumstances. What financial protection do you need?  What’s your current financial situation? <br>
+                What you want to achieve. What sort of advice might you need?  Do you need an overall plan for financial security or do you need advice to overcome a particular problem   
+            </p>
+        </div> -->
+    </div>
+   
+</div>
+
+
+  
+{% endblock body %}
+
+{% block script %} 
+{% endblock script %}
